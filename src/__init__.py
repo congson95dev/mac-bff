@@ -1,8 +1,5 @@
 from flask import Flask
-from flask_migrate import Migrate
 from flask_restx import Api
-from src.Config import Config
-import datetime
 from src.common.handle_exception import handle_exception
 
 

@@ -5,6 +5,12 @@ format:
 	black .
 lint:
 	pylint --disable=R,C src/*.py
+flake8:
+	flake8 --max-line-length=88 \
+	--max-complexity=18 \
+	--select=B,C,E,F,W,T4,B9 \
+	--ignore=E203,E266,W503,F403,F401,E402 \
+	--exclude=venv
 test:
 	# unit test using pytest and pytest-coverage
 build:
@@ -12,4 +18,4 @@ build:
 deploy:
 	docker run -d -p 0.0.0.0:5000:5000 mac-bff
 
-all: install format lint test build deploy
+all: install format lint flake8 test build deploy

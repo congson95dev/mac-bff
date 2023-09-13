@@ -1,4 +1,4 @@
-from src.common.handle_exception import NotFoundException, BadRequestException
+from src.common.handle_exception import NotFoundException
 from src.service.GrpcService import GrpcService
 
 
